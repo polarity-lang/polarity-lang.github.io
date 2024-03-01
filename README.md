@@ -1,4 +1,5 @@
 # Public Website for polarity-lang.github.io
+[![Publish Website to gh-pages](https://github.com/polarity-lang/polarity-lang.github.io/actions/workflows/publish.yml/badge.svg)](https://github.com/polarity-lang/polarity-lang.github.io/actions/workflows/publish.yml)
 
 The website is built using the [zola](https://www.getzola.org/) static site generator.
 
@@ -20,7 +21,7 @@ Web server is available at http://127.0.0.1:1111
 
 In order to build the site run:
 
-```
+```console
 > zola build
 Building site...
 Checking all internal links with anchors.
