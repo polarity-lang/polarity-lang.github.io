@@ -1,3 +1,4 @@
+title = "Polarity"
 # The URL the site will be built for
 base_url = "https://polarity-lang.github.io"
 
@@ -7,10 +8,21 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+theme = "juice"
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
+highlight_theme = "css"
 
 [extra]
-# Put all your custom variables here
+juice_logo_name = "Polarity"
+juice_logo_path = "juice.svg"
+juice_extra_menu = [
+    { title = "Github", link = "https://github.com/polarity-lang/polarity-lang"}
+]
+juice_exclude_menu = [
+    "exclude_from_nav"
+]
+repository_url = "https://github.com/polarity-lang/polarity-lang.github.io"

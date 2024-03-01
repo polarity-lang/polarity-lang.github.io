@@ -1,0 +1,18 @@
+{% extends "juice/templates/index.html" %}
+{% block hero %}
+    <div>
+        Polarity lang...
+    </div>
+{% endblock hero %}
+
+{% block content %}
+{{ section.content | safe }}
+{% endblock content %}
+
+{% block footer %}
+<footer>
+  <small class="subtext">
+    Created by the <a href="https://github.com/polarity-lang/">polarity-lang</a> team.
+  </small>
+</footer>
+{% endblock footer %}
