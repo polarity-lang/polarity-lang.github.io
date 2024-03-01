@@ -1,4 +1,4 @@
-# Public website for polarity-lang.github.io
+# Public Website for polarity-lang.github.io
 
 The website is built using the [zola](https://www.getzola.org/) static site generator.
 
