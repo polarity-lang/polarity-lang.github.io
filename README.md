@@ -28,3 +28,7 @@ Successfully checked 0 internal link(s) with anchors.
 -> Creating 0 pages (0 orphan) and 0 sections
 Done in 9ms.
 ```
+
+## Theme
+
+We are using the [juice](https://github.com/huhu/juice) theme.
