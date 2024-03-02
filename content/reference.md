@@ -1,5 +1,5 @@
 +++
-title = "Reference"
+title = "Language Reference"
 description = "Language Reference"
 weight = 2
 +++
