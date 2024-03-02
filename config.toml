@@ -18,7 +18,7 @@ highlight_theme = "css"
 
 [extra]
 juice_logo_name = "Polarity"
-juice_logo_path = "juice.svg"
+juice_logo_path = "logo.svg"
 juice_extra_menu = [
     { title = "Github", link = "https://github.com/polarity-lang/polarity-lang"}
 ]
