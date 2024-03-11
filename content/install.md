@@ -10,11 +10,11 @@ We currently do not provide prebuilt binaries, so you have to build the polarity
 
 ## Requirements
 
-The latest version of the source code is available on [github.com/polarity-lang/polarity-lang](https://github.com/polarity-lang/polarity-lang).
+The latest version of the source code is available on [github.com/polarity-lang/polarity](https://github.com/polarity-lang/polarity).
 You have to clone that repository into an empty directory, for example with the following invocation:
 
 ```console
-> git clone git@github.com:polarity-lang/polarity-lang.git
+> git clone git@github.com:polarity-lang/polarity.git
 ```
 
 Polarity is implemented in [Rust](https://www.rust-lang.org), so you also need to install a Rust toolchain on your system.

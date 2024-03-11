@@ -20,7 +20,7 @@ highlight_theme = "css"
 juice_logo_name = "Polarity"
 juice_logo_path = "logo_transparent.svg"
 juice_extra_menu = [
-    { title = "Github", link = "https://github.com/polarity-lang/polarity-lang"}
+    { title = "Github", link = "https://github.com/polarity-lang/polarity"}
 ]
 juice_exclude_menu = [
     "exclude_from_nav"
