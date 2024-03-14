@@ -1,7 +1,7 @@
 +++
 title = "Publications"
 description = "Publications Related to Polarity"
-weight = 4
+weight = 3
 +++
 
 The design of polarity has been described in the following publication:

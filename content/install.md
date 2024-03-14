@@ -1,7 +1,7 @@
 +++
 title = "Install"
 description = "Installation"
-weight = 3
+weight = 2
 +++
 
 # Installing Polarity

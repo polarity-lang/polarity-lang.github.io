@@ -1,10 +1,14 @@
 +++
-title = "Language Reference"
-description = "Language Reference"
-weight = 2
+title = "Docs"
+description = "Docs"
+weight = 4
 +++
 
-# Data Types
+This page contains the reference documentation of the language features and information about how to use the command line interface.
+
+# Language Reference
+
+## Data Types
 
 The simplest form of data types do not have parameters or indices. In that case, the constructors of the data type can be given as a comma-separated list. As with all syntactic constructs, we always allow trailing commas.
 
@@ -44,7 +48,7 @@ data Eq (a: Type, x y: a) {
 }
 ```
 
-# Codata Types
+## Codata Types
 
 Codata types are specified by a list of methods or destructors. A very simple example is the type of pairs of a boolean and a natural number:
 
@@ -84,7 +88,7 @@ codata Bool {
 }
 ```
 
-# Definitions
+## Definitions
 
 Definitions create a consumer (method) for a data type. These consumers receive an implicit input on which they pattern match. As a simple example, we can define Boolean negation as follows:
 
@@ -131,7 +135,7 @@ def (x: Bool).neg_inverse: Eq(Bool, x, x.not.not) {
 }
 ```
 
-# Codefinitions
+## Codefinitions
 
 Codefinitions create producers (or objects) for codata types. They need to define the behavior of the object when each of its destructors is invoked. Analogously to pattern matching, where we pattern match on the constructors of a data type, we copattern match on the destructors of a codata type. For example, we can create a pair with the Pair codata type defined above as follows:
 
@@ -169,7 +173,7 @@ codef False: Bool {
 }
 ```
 
-# Comments
+## Comments
 
 Line comments are written using two dashes: `-- This is a comment`. Certain items of the program can also be annotated with a documentation comment. Here is an example using doc-comments:
 
@@ -185,7 +189,7 @@ data Bool {
 
 These documentation comments are preserved during defunctionalization and refunctionalization.
 
-# Typed Holes
+## Typed Holes
 
 An incomplete program can be written using typed holes. Typed holes are written using either ?; they have type ? which unifies with any other type. For example, an incomplete implementation of boolean negation can be written as follows:
 
@@ -196,7 +200,7 @@ def Bool.neg : Bool {
 }
 ```
 
-# The Main Expression
+## The Main Expression
 
 After all other data types, codata types, definitions and codefinitions an additional expression can be written. This is called the "main" expression of the program.
 
@@ -207,4 +211,28 @@ def Bool.neg {
   False => True,
 }
 True.neg
+```
+
+# CLI Reference
+
+In order to learn more about available options you can use `pol --help` on the command line.
+This section contains more information about specific subcommands.
+
+## Subcommand texify
+
+If you want to include a color-highlighted polarity snippet in a tex file then you can use the `pol texify` subcommand which generates typeset latex.
+The generated tex code will depend on some custom color definitions.
+We suggest that you include the following definitions in the preamble as a starting point.
+
+```
+\usepackage{xcolor}
+% Color definitions for pol
+\definecolor{polBlack}{rgb}{0,0,0}
+\definecolor{polBlue}{rgb}{0.06, 0.2, 0.65}
+\definecolor{polGreen}{RGB}{0,155,85}
+\definecolor{polRed}{rgb}{0.8,0.4,0.3}
+\definecolor{polCyan}{rgb}{0.0, 1.0, 1.0}
+\definecolor{polMagenta}{rgb}{0.8, 0.13, 0.13}
+\definecolor{polYellow}{rgb}{0.91, 0.84, 0.42}
+\definecolor{polWhite}{rgb}{1,1,1}
 ```
