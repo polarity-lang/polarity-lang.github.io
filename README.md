@@ -1,6 +1,23 @@
 # Public Website for polarity-lang.github.io
 [![Publish Website to gh-pages](https://github.com/polarity-lang/polarity-lang.github.io/actions/workflows/publish.yml/badge.svg)](https://github.com/polarity-lang/polarity-lang.github.io/actions/workflows/publish.yml)
 
+### Cloning the site
+
+We use a git submodule for the theme, so you have to clone this repository recursively:
+
+```console
+git clone --recurse-submodules git@github.com:polarity-lang/polarity-lang.github.io.git
+```
+
+If you have already cloned the repository without the `--recurse-submodules` flag, then you can use the following two commands to initialize the submodule:
+
+```console
+git submodule init
+git submodule update
+```
+
+### Building the site
+
 The website is built using the [zola](https://www.getzola.org/) static site generator.
 
 In order to preview the site run:
@@ -30,6 +47,6 @@ Successfully checked 0 internal link(s) with anchors.
 Done in 9ms.
 ```
 
-## Theme
+### Theme
 
 We are using the [juice](https://github.com/huhu/juice) theme.
