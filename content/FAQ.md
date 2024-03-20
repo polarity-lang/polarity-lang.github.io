@@ -23,5 +23,5 @@ Instead, polarity is a dependently-typed programming language similar to a proje
 
 # What does the logo depict?
 
-The logo is inspired by an [artic hare](https://en.wikipedia.org/wiki/Arctic_hare) which has a white winter coat and a dark summer coat. The fur pattern resembles the yin and yang symbol, playing on the duality between data and codata.
+The logo is inspired by an [arctic hare](https://en.wikipedia.org/wiki/Arctic_hare) which has a white winter coat and a dark summer coat. The fur pattern resembles the yin and yang symbol, playing on the duality between data and codata.
 The logo was designed by Hendrik Süberkrüb.
