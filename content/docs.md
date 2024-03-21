@@ -199,7 +199,21 @@ def Bool.neg : Bool {
   False => ?,
 }
 ```
+## Attributes
 
+An attribute is a freeform metadatum that can be added to various pieces of syntax.
+These attributes can then be interpreted by the compiler or other tools.
+Attributes are written in a similar style as Rust and C#: We use `#[attr1,attr2]` in front of an entity that we want to annotate.
+
+```
+#[omit_print]
+data Bool { True, False }
+```
+
+The following attributes are currently supported by the compiler:
+
+- `omit_print` Toplevel declarations annotated with this attribute are ignored by the prettyprinter.
+  This is useful for codesnippets that are compiled to tex in order to be included in documents.
 
 # CLI Reference
 
