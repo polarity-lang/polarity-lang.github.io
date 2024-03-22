@@ -173,6 +173,45 @@ codef False: Bool {
 }
 ```
 
+## Toplevel Let Bindings
+
+Expressions can be defined at the toplevel using let bindings.
+In the following example we bind the expression `S(S(S(S(Z))))` to the name `four`:
+
+```
+data Nat { Z, S(Z) }
+let four : Nat { S(S(S(S(Z)))) }
+```
+
+These top level bindings are `opaque` by default.
+This means that they are not unfolded during type-checking and not judgementally equal to their body.
+This behaviour can be controlled using the `opaque` and `transparent` attributes.
+
+```
+data Nat { Z, S(Z) }
+data Eq(a: Type, x y: a) { Refl(a: Type, x: a) : Eq(a,x,x) }
+
+#[opaque]
+let opaqueTwo : Nat { S(S(Z)) }
+
+-- | This proof does NOT typecheck
+let p1 : Eq(Nat, S(S(Z)), opaqueTwo) { Refl(Nat,S(S(Z))) }
+
+#[transparent]
+let transparentTwo : Nat { Nat }
+
+-- | This proof typechecks
+let p2 : Eq(Nat, S(S(Z)), transparentTwo) { Refl(Nat,S(S(Z))) }
+```
+
+Marking toplevel let bindings as `transparent` should be done with caution, since recursive let bindings can lead to non-termination during normalization and type-checking.
+
+#### The Main Expression
+
+A toplevel let binding named `main` which does not take arguments is treated specially.
+This binding is evaluated by `pol run` and printed to the console.
+
+
 ## Comments
 
 Line comments are written using two dashes: `-- This is a comment`. Certain items of the program can also be annotated with a documentation comment. Here is an example using doc-comments:
@@ -214,6 +253,8 @@ The following attributes are currently supported by the compiler:
 
 - `omit_print` Toplevel declarations annotated with this attribute are ignored by the prettyprinter.
   This is useful for codesnippets that are compiled to tex in order to be included in documents.
+- `opaque` and `transparent` These attributes can be used on [toplevel let bindings](#toplevel-let-bindings) to control whether the binding should be inlined during normalization.
+
 
 # CLI Reference
 
