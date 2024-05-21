@@ -179,7 +179,7 @@ Expressions can be defined at the toplevel using let bindings.
 In the following example we bind the expression `S(S(S(S(Z))))` to the name `four`:
 
 ```
-data Nat { Z, S(Z) }
+data Nat { Z, S(n: Nat) }
 let four : Nat { S(S(S(S(Z)))) }
 ```
 
@@ -188,20 +188,23 @@ This means that they are not unfolded during type-checking and not judgementally
 This behaviour can be controlled using the `opaque` and `transparent` attributes.
 
 ```
-data Nat { Z, S(Z) }
-data Eq(a: Type, x y: a) { Refl(a: Type, x: a) : Eq(a,x,x) }
+data Nat { Z, S(n: Nat) }
 
-#[opaque]
-let opaqueTwo : Nat { S(S(Z)) }
-
--- | This proof does NOT typecheck
-let p1 : Eq(Nat, S(S(Z)), opaqueTwo) { Refl(Nat,S(S(Z))) }
+data Eq(a: Type, x y: a) {
+    Refl(a: Type, x: a): Eq(a, x, x)
+}
 
 #[transparent]
-let transparentTwo : Nat { Nat }
+let transparentTwo: Nat {S(S(Z))}
 
 -- | This proof typechecks
-let p2 : Eq(Nat, S(S(Z)), transparentTwo) { Refl(Nat,S(S(Z))) }
+let p1: Eq(Nat, S(S(Z)), transparentTwo) {Refl(Nat, S(S(Z)))}
+
+#[opaque]
+let opaqueTwo: Nat {S(S(Z))}
+
+-- | This proof does not typecheck
+let p2: Eq(Nat, S(S(Z)), opaqueTwo) {Refl(Nat, S(S(Z)))}
 ```
 
 Marking toplevel let bindings as `transparent` should be done with caution, since recursive let bindings can lead to non-termination during normalization and type-checking.
