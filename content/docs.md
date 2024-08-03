@@ -56,12 +56,12 @@ Codata types are specified by a list of methods or destructors. A very simple ex
 data Bool { True, False }
 data Nat { Z, S(n: Nat)}
 codata Pair {
-  proj1: Bool,
-  proj2: Nat
+  .proj1: Bool,
+  .proj2: Nat
 }
 ```
 
-This type supports two observations; the first observations proj1 yields a boolean value when invoked on a Pair, and the observation proj2 yields a natural number.
+This type supports two observations; the first observation proj1 yields a boolean value when invoked on a Pair, and the observation proj2 yields a natural number.
 
 A common codata type that is typically built into many programming languages is the function type. In our language, it is not built-in, but we can define it as follows:
 
@@ -141,8 +141,8 @@ Codefinitions create producers (or objects) for codata types. They need to defin
 
 ```
 codef MyPair: Pair {
-    proj1 => True,
-    proj2 => 42,
+    .proj1 => True,
+    .proj2 => 42,
 }
 ```
 
@@ -152,8 +152,8 @@ Codefinitions can also be used to construct infinite objects. For instance, we c
 
 ```
 codef CountUp(n: Nat): Stream(Nat) {
-    head(_) => n,
-    tail(_) => CountUp(S(n)),
+    .head(_) => n,
+    .tail(_) => CountUp(S(n)),
 }
 ```
 
@@ -161,15 +161,15 @@ Finally, codefinitions can also return proofs that they fulfill certain properti
 
 ```
 codef True: Bool {
-    not => False,
-    neg_inverse => Refl(Bool, True),
+    .not => False,
+    .neg_inverse => Refl(Bool, True),
 }
 ```
 
 ```
 codef False: Bool {
-    not => True,
-    neg_inverse => Refl(Bool, False),
+    .not => True,
+    .neg_inverse => Refl(Bool, False),
 }
 ```
 
