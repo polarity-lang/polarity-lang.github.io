@@ -15,6 +15,7 @@ jobs:
     - name: Fetch web demo
       run: |
         ./scripts/fetch_demo.sh
+        rm static/.gitignore
     - name: Build and deploy
       uses: shalzz/zola-deploy-action@master
       env:
