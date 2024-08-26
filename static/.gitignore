@@ -1,0 +1,6 @@
+/editor
+/examples
+*.wasm
+*.ttf
+*.js.LICENSE.txt
+*.js
