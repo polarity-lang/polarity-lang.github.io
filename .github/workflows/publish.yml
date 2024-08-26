@@ -1,6 +1,6 @@
 name: Publish Website to gh-pages
 
-on: 
+on:
  push:
   branches:
    - main
@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout main
       uses: actions/checkout@v3.0.0
+    - name: Fetch web demo
+      run: |
+        ./scripts/fetch_demo.sh
     - name: Build and deploy
       uses: shalzz/zola-deploy-action@master
       env:

@@ -1,0 +1,89 @@
+{% extends "juice/templates/index.html" %}
+{% block head %}
+<link rel="stylesheet" href="/editor.css">
+<!-- JavaScript to update iframe URL based on selected example -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Event listener for when an example is selected
+    document.getElementById('example-selector').addEventListener('change', function () {
+      var selectedExample = this.value;
+      var iframe = document.getElementById('editor-frame');
+      if (selectedExample) {
+        iframe.src = "{{ get_url(path='/editor') }}" + "#" + selectedExample;
+      }
+    });
+
+    // Populate the selector with examples and add a default "Select an example ..." option
+    const select = document.getElementById('example-selector');
+    fetch('/examples/index.json')
+      .then(response => response.json())
+      .then(data => {
+        // Add the "Select an example ..." option
+        const defaultOption = document.createElement('option');
+        defaultOption.textContent = "Select an example...";
+        defaultOption.value = "";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        defaultOption.style.fontStyle = "italic";
+        select.appendChild(defaultOption);
+
+        // Add other example options
+        data.forEach(example => {
+          const option = document.createElement('option');
+          option.value = example.path;
+          option.textContent = example.name;
+          select.appendChild(option);
+        });
+      })
+      .catch(error => console.error('Error loading examples:', error));
+  });
+</script>
+{% endblock head %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+{% endblock favicon %}
+
+{% block hero %}
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<section class="text-center welcome">
+  <h1 class="heading-text">Polarity</h1>
+  <h3 class="title-text">
+    A research language focused on dependent data and codata types
+  </h3>
+  <p>
+    <a class="github-button" href="https://github.com/polarity-lang/polarity" data-size="large" data-show-count="true"
+      aria-label="Star polarity-lang/polarity on GitHub">Star</a>
+  </p>
+</section>
+<img class="hero-image" style="width: 25%" src="{{ get_url(path="logo_transparent.svg") }}">
+{% endblock hero %}
+
+{% block content %}
+
+<section>
+  <h1>Try Polarity</h1>
+  <div class="select-container">
+    <select id="example-selector"></select>
+  </div>
+</section>
+
+<section class="polarity-demo">
+  <div class="demo-container">
+    <div class="editor-container">
+      <iframe class="editor-frame" id="editor-frame" src="{{ get_url(path="/editor") }}"></iframe>
+    </div>
+  </div>
+</section>
+
+{{ section.content | safe }}
+
+{% endblock content %}
+
+{% block footer %}
+<footer>
+  <small class="subtext">
+    Created by the <a href="https://github.com/polarity-lang/">polarity-lang</a> team.
+  </small>
+</footer>
+{% endblock footer %}
