@@ -12,7 +12,7 @@ output_file="static/examples/index.json"
 echo "[" > $output_file
 
 # Find all files in static/examples, format them as JSON objects, excluding index.json
-find static/examples -type f ! -name "index.json" | while read -r file; do
+find static/examples -type f -name \*.pol | while read -r file; do
   # Get the path relative to the examples directory
   filepath="${file#static/examples/}"
 
