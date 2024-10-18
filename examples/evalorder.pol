@@ -1,0 +1,30 @@
+data Bool {
+    True,
+    False
+}
+
+codata Fun(a b: Type) {
+    Fun(a, b).ap(a: Type, b: Type, x: a) : b
+}
+
+codef Ignore(y: Bool): Fun(Bool, Bool) {
+    .ap(a, b, x) => x
+}
+
+data Top { Unit }
+
+def Top.diverge : Bool {
+    Unit => Unit.diverge
+}
+
+def Top.before : Fun(Bool, Bool) {
+    Unit => Ignore(Unit.diverge)
+}
+
+def Top.after : Fun(Bool, Bool) {
+    Unit =>
+        -- let y = Unit.diverge in
+        comatch Ignore2 {
+            .ap(a, b, x) => x
+        }
+}

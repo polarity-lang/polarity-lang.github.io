@@ -1,0 +1,29 @@
+data Bool { True, False }
+
+def Bool.not: Bool {
+    True => False,
+    False => True,
+}
+
+data BoolRep(x: Bool) {
+    TrueRep: BoolRep(True),
+    FalseRep: BoolRep(False),
+}
+
+def BoolRep(x).extract(x: Bool): Bool {
+    TrueRep => True,
+    FalseRep => False,
+}
+
+data Top { Unit }
+
+def Top.flipRep(x: Bool, rep: BoolRep(x)): BoolRep(x.not) {
+    Unit => rep.match {
+        TrueRep => FalseRep,
+        FalseRep => TrueRep,
+    }
+}
+
+def Top.example: Bool {
+    Unit => Unit.flipRep(True, TrueRep).extract(False)
+}

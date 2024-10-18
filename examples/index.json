@@ -1,0 +1,190 @@
+[
+  {
+    "name": "boolrep",
+    "path": "boolrep.pol"
+  },
+  {
+    "name": "neg_inverse",
+    "path": "neg_inverse.pol"
+  },
+  {
+    "name": "vect",
+    "path": "vect.pol"
+  },
+  {
+    "name": "stlc_bool",
+    "path": "stlc_bool.pol"
+  },
+  {
+    "name": "colist",
+    "path": "colist.pol"
+  },
+  {
+    "name": "imports",
+    "path": "imports.pol"
+  },
+  {
+    "name": "Codata Unit",
+    "path": "Codata/Unit.pol"
+  },
+  {
+    "name": "Codata Pair",
+    "path": "Codata/Pair.pol"
+  },
+  {
+    "name": "Codata Fun",
+    "path": "Codata/Fun.pol"
+  },
+  {
+    "name": "Codata Stream",
+    "path": "Codata/Stream.pol"
+  },
+  {
+    "name": "ParigotEncoding",
+    "path": "ParigotEncoding.pol"
+  },
+  {
+    "name": "Data List",
+    "path": "Data/List.pol"
+  },
+  {
+    "name": "Data Result",
+    "path": "Data/Result.pol"
+  },
+  {
+    "name": "Data Option",
+    "path": "Data/Option.pol"
+  },
+  {
+    "name": "Data Void",
+    "path": "Data/Void.pol"
+  },
+  {
+    "name": "Data Eq",
+    "path": "Data/Eq.pol"
+  },
+  {
+    "name": "Data Unit",
+    "path": "Data/Unit.pol"
+  },
+  {
+    "name": "Data Pair",
+    "path": "Data/Pair.pol"
+  },
+  {
+    "name": "Data Nat",
+    "path": "Data/Nat.pol"
+  },
+  {
+    "name": "Data Bool",
+    "path": "Data/Bool.pol"
+  },
+  {
+    "name": "functor",
+    "path": "functor.pol"
+  },
+  {
+    "name": "pi",
+    "path": "pi.pol"
+  },
+  {
+    "name": "motive",
+    "path": "motive.pol"
+  },
+  {
+    "name": "arith",
+    "path": "arith.pol"
+  },
+  {
+    "name": "ChurchEncoding",
+    "path": "ChurchEncoding.pol"
+  },
+  {
+    "name": "gadt",
+    "path": "gadt.pol"
+  },
+  {
+    "name": "absurd",
+    "path": "absurd.pol"
+  },
+  {
+    "name": "Webserver",
+    "path": "Webserver.pol"
+  },
+  {
+    "name": "classical_logic",
+    "path": "classical_logic.pol"
+  },
+  {
+    "name": "buffer",
+    "path": "buffer.pol"
+  },
+  {
+    "name": "eq",
+    "path": "eq.pol"
+  },
+  {
+    "name": "covect",
+    "path": "covect.pol"
+  },
+  {
+    "name": "evalorder",
+    "path": "evalorder.pol"
+  },
+  {
+    "name": "FuStumpEncoding",
+    "path": "FuStumpEncoding.pol"
+  },
+  {
+    "name": "local_matches",
+    "path": "local_matches.pol"
+  },
+  {
+    "name": "strong_existentials",
+    "path": "strong_existentials.pol"
+  },
+  {
+    "name": "example",
+    "path": "example.pol"
+  },
+  {
+    "name": "stream",
+    "path": "stream.pol"
+  },
+  {
+    "name": "ScottEncoding",
+    "path": "ScottEncoding.pol"
+  },
+  {
+    "name": "setoid",
+    "path": "setoid.pol"
+  },
+  {
+    "name": "implicit_list",
+    "path": "implicit_list.pol"
+  },
+  {
+    "name": "refinement",
+    "path": "refinement.pol"
+  },
+  {
+    "name": "typedhole",
+    "path": "typedhole.pol"
+  },
+  {
+    "name": "simple",
+    "path": "simple.pol"
+  },
+  {
+    "name": "comatches",
+    "path": "comatches.pol"
+  },
+  {
+    "name": "stlc",
+    "path": "stlc.pol"
+  },
+  {
+    "name": "ExpressionsCaseStudy",
+    "path": "ExpressionsCaseStudy.pol"
+  }
+]
