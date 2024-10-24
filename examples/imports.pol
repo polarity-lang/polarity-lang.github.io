@@ -1,0 +1,11 @@
+use "Data/Nat.pol"
+use "Data/Bool.pol"
+
+let one: Nat { 1 }
+
+let true: Bool { T }
+
+def Bool.iNeg : Bool {
+    T => F,
+    F => T,
+}
