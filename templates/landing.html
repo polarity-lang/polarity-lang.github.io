@@ -1,6 +1,7 @@
 {% extends "juice/templates/index.html" %}
 {% block head %}
 <link rel="stylesheet" href="/editor.css">
+<link rel="stylesheet" href="/landing.css">
 <!-- JavaScript to update iframe URL based on selected example -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -45,15 +46,17 @@
 {% endblock favicon %}
 
 {% block hero %}
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 <section class="text-center welcome">
   <h1 class="heading-text">Polarity</h1>
   <h3 class="title-text">
     A research language focused on dependent data and codata types
   </h3>
   <p>
-    <a class="github-button" href="https://github.com/polarity-lang/polarity" data-size="large" data-show-count="true"
-      aria-label="Star polarity-lang/polarity on GitHub">Star</a>
+    <div class="buttons-row-container">
+    <div class="buttons-row">
+    <a class="github-button" href="https://github.com/polarity-lang/polarity" target="_blank"><img width="40" src="{{ get_url(path="github_icon.svg") }}" />GitHub 
+    <a class="discord-button" href="https://discord.gg/NWjGr9qNhR" target="_blank"><img width="40" src="{{ get_url(path="discord_icon.svg") }}" />Discord</a>
+  </div></div>
   </p>
 </section>
 <img class="hero-image" style="width: 25%" src="{{ get_url(path="logo_transparent.svg") }}">
