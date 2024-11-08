@@ -1,0 +1,53 @@
+.buttons-row-container {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.discord-button {
+    display: inline-flex;
+    height: 12px;
+    padding: 8px;
+    padding-left: 0;
+    border-radius: 8px;
+    border: 2px solid white;
+    text-align: center;
+    font-family: "Fira Sans";
+    font-size: 10pt;
+    color: inherit;
+}
+
+.discord-button img {
+    height: 15px;
+}
+
+.github-button {
+    display: inline-flex;
+    height: 12px;
+    padding: 8px;
+    padding-left: 0;
+    border-radius: 8px;
+    border: 2px solid white;
+    text-align: center;
+    font-family: "Fira Sans";
+    font-size: 10pt;
+    color: inherit;
+}
+
+.github-button img {
+    height: 15px;    
+}
+
+@media (prefers-color-scheme: dark) {
+    .discord-button {
+        color: white;
+    }
+    .github-button {
+        color: white;
+    }
+}
