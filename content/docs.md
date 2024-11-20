@@ -271,14 +271,19 @@ The generated tex code will depend on some custom color definitions.
 We suggest that you include the following definitions in the preamble as a starting point.
 
 ```
+\usepackage{alltt}
 \usepackage{xcolor}
-% Color definitions for pol
-\definecolor{polBlack}{rgb}{0,0,0}
+% Color definitions
+\definecolor{polRed}{rgb}{0.8,0.4,0.3}
 \definecolor{polBlue}{rgb}{0.06, 0.2, 0.65}
 \definecolor{polGreen}{RGB}{0,155,85}
-\definecolor{polRed}{rgb}{0.8,0.4,0.3}
-\definecolor{polCyan}{rgb}{0.0, 1.0, 1.0}
 \definecolor{polMagenta}{rgb}{0.8, 0.13, 0.13}
-\definecolor{polYellow}{rgb}{0.91, 0.84, 0.42}
-\definecolor{polWhite}{rgb}{1,1,1}
+\definecolor{polCyan}{rgb}{0.0, 1.0, 1.0}
+
+\newcommand*{\setTT}[1]{\texttt{#1}}
+\newcommand{\polType}[1]{\textcolor{polRed}{\setTT{#1}}}
+\newcommand{\polCtor}[1]{\textcolor{polBlue}{\setTT{#1}}}
+\newcommand{\polDtor}[1]{\textcolor{polGreen}{\setTT{#1}}}
+\newcommand{\polKw}[1]{\textcolor{polMagenta}{\setTT{#1}}}
+\newcommand{\polComment}[1]{\textcolor{polCyan}{\setTT{#1}}}
 ```
