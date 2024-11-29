@@ -23,7 +23,6 @@
         defaultOption.textContent = "Select an example...";
         defaultOption.value = "";
         defaultOption.disabled = true;
-        defaultOption.selected = true;
         defaultOption.style.fontStyle = "italic";
         select.appendChild(defaultOption);
 
@@ -32,6 +31,9 @@
           const option = document.createElement('option');
           option.value = example.path;
           option.textContent = example.name;
+          if (example.path === 'tutorial.pol') {
+            option.selected = true;
+          }
           select.appendChild(option);
         });
       })
@@ -76,7 +78,7 @@
 <section class="polarity-demo">
   <div class="demo-container">
     <div class="editor-container">
-      <iframe class="editor-frame" id="editor-frame" src="{{ get_url(path="/editor") }}"></iframe>
+      <iframe class="editor-frame" id="editor-frame" src="{{ get_url(path="/editor") }}#tutorial.pol"></iframe>
     </div>
   </div>
 </section>
