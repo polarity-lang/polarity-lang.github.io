@@ -20,5 +20,3 @@ unzip -o -d "$DEST_DIR" /tmp/web-demo-latest.zip -x "index.html"
 rm /tmp/web-demo-latest.zip
 
 echo "Extraction complete. Files are in the '$DEST_DIR' directory."
-
-./scripts/index_examples.sh
