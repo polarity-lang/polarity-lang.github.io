@@ -10,10 +10,9 @@
       var selectedExample = this.value;
       var iframe = document.getElementById('editor-frame');
       if (selectedExample) {
-        iframe.src = "{{ get_url(path='/editor') }}" + "#" + selectedExample;
+        iframe.contentWindow.location.hash = selectedExample;
       }
     });
-
     // Populate the selector with examples and add a default "Select an example ..." option
     const select = document.getElementById('example-selector');
     fetch('/examples/index.json')
@@ -24,7 +23,6 @@
         defaultOption.textContent = "Select an example...";
         defaultOption.value = "";
         defaultOption.disabled = true;
-        defaultOption.selected = true;
         defaultOption.style.fontStyle = "italic";
         select.appendChild(defaultOption);
 
@@ -33,6 +31,9 @@
           const option = document.createElement('option');
           option.value = example.path;
           option.textContent = example.name;
+          if (example.path === 'tutorial.pol') {
+            option.selected = true;
+          }
           select.appendChild(option);
         });
       })
@@ -52,11 +53,14 @@
     A research language focused on dependent data and codata types
   </h3>
   <p>
-    <div class="buttons-row-container">
+  <div class="buttons-row-container">
     <div class="buttons-row">
-    <a class="github-button" href="https://github.com/polarity-lang/polarity" target="_blank"><img width="40" src="{{ get_url(path="github_icon.svg") }}" />GitHub 
-    <a class="discord-button" href="https://discord.gg/NWjGr9qNhR" target="_blank"><img width="40" src="{{ get_url(path="discord_icon.svg") }}" />Discord</a>
-  </div></div>
+      <a class="github-button" href="https://github.com/polarity-lang/polarity" target="_blank"><img width="40"
+          src="{{ get_url(path="github_icon.svg") }}" />GitHub
+        <a class="discord-button" href="https://discord.gg/NWjGr9qNhR" target="_blank"><img width="40"
+            src="{{ get_url(path="discord_icon.svg") }}" />Discord</a>
+    </div>
+  </div>
   </p>
 </section>
 <img class="hero-image" style="width: 25%" src="{{ get_url(path="logo_transparent.svg") }}">
@@ -74,7 +78,7 @@
 <section class="polarity-demo">
   <div class="demo-container">
     <div class="editor-container">
-      <iframe class="editor-frame" id="editor-frame" src="{{ get_url(path="/editor") }}"></iframe>
+      <iframe class="editor-frame" id="editor-frame" src="{{ get_url(path="/editor") }}#tutorial.pol"></iframe>
     </div>
   </div>
 </section>
