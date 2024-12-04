@@ -65,3 +65,18 @@ Users of [VSCodium](https://vscodium.com/) or other editors compatible with `.vs
 ## Building from source
 
 The plugin can also be built from source using the instructions on [github.com/polarity-lang/vscode](https://github.com/polarity-lang/vscode).
+
+# Shell Completions
+
+In order to get working shell completions for the `pol` binary you need to generate a completion script for your shell and place it in the correct directory.
+This directory depends your operating system, distribution and shell.
+Completions scripts can be generated with the `pol generate-completion` subcommand which supports Bash, Elvish, fish, PowerShell and the Zsh shell.
+
+If you are using the bash shell on Ubuntu, for example, you can install a completion script using the following steps:
+
+```
+> pol generate-completion bash pol
+> sudo mv pol /usr/share/bash-completion/completions/pol
+```
+
+Please consult the documentation of your operating system or distribution to find out where you have to place the completion scripts on your computer.
