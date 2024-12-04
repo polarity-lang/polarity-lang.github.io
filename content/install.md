@@ -69,7 +69,7 @@ The plugin can also be built from source using the instructions on [github.com/p
 # Shell Completions
 
 In order to get working shell completions for the `pol` binary you need to generate a completion script for your shell and place it in the correct directory.
-This directory depends your operating system, distribution and shell.
+This directory depends on your operating system, distribution and shell.
 Completions scripts can be generated with the `pol generate-completion` subcommand which supports Bash, Elvish, fish, PowerShell and the Zsh shell.
 
 If you are using the bash shell on Ubuntu, for example, you can install a completion script using the following steps:
