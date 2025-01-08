@@ -7,8 +7,8 @@
   document.addEventListener("DOMContentLoaded", function () {
     // Event listener for when an example is selected
     document.getElementById('example-selector').addEventListener('change', function () {
-      var selectedExample = this.value;
-      var iframe = document.getElementById('editor-frame');
+      let selectedExample = this.value;
+      let iframe = document.getElementById('editor-frame');
       if (selectedExample) {
         iframe.contentWindow.location.hash = selectedExample;
       }
@@ -39,6 +39,11 @@
       })
       .catch(error => console.error('Error loading examples:', error));
   });
+
+  window.onload = function() {
+    let iframe = document.getElementById('editor-frame');
+    iframe.style.visibility = 'visible';
+  };
 </script>
 {% endblock head %}
 
@@ -78,7 +83,7 @@
 <section class="polarity-demo">
   <div class="demo-container">
     <div class="editor-container">
-      <iframe class="editor-frame" id="editor-frame" src="{{ get_url(path="/editor") }}#tutorial.pol"></iframe>
+      <iframe style="visibility: hidden;" class="editor-frame" id="editor-frame" src="{{ get_url(path="/editor") }}#tutorial.pol"></iframe>
     </div>
   </div>
 </section>
