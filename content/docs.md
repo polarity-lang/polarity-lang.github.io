@@ -197,13 +197,13 @@ data Eq(a: Type, x y: a) {
 #[transparent]
 let transparentTwo: Nat {S(S(Z))}
 
--- | This proof typechecks
+/// This proof typechecks
 let p1: Eq(Nat, S(S(Z)), transparentTwo) {Refl(Nat, S(S(Z)))}
 
 #[opaque]
 let opaqueTwo: Nat {S(S(Z))}
 
--- | This proof does not typecheck
+/// This proof does not typecheck
 let p2: Eq(Nat, S(S(Z)), opaqueTwo) {Refl(Nat, S(S(Z)))}
 ```
 
@@ -217,14 +217,14 @@ This binding is evaluated by `pol run` and printed to the console.
 
 ## Comments
 
-Line comments are written using two dashes: `-- This is a comment`. Certain items of the program can also be annotated with a documentation comment. Here is an example using doc-comments:
+Line comments are written using two forward slashes: `// This is a comment`. Certain items of the program can also be annotated with a documentation comment. Here is an example using doc-comments:
 
 ```
--- | The type of booleans
+/// The type of booleans
 data Bool {
-  -- | The boolean truth value
+  /// The boolean truth value
   True,
-  -- | The boolean false value
+  /// The boolean false value
   False,
 }
 ```
