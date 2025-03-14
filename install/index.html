@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Install | Polarity </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #FED43F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        --primary-text-color-over: #000;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #ddd;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary-color: #382929;
+            --primary-text-color: #d7d7d7;
+            --primary-text-color-over: #FFF;
+            --primary-link-color: #9b9b9b;
+            --secondary-color: #282828;
+            --secondary-text-color: #f2f2f2;
+            --toc-highlight-text-color: #f2f2f2;
+            --toc-background-color: #3a3a3a;
+            --code-color: white;
+            --code-background-color: #4a4a4a;
+
+            --shadow-color: #202020;
+            --header-font-family: "Fira Sans", sans-serif;
+            --text-font-family: "Fira Sans", sans-serif;
+        }
+    }
+</style>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://polarity-lang.github.io/juice.css">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https://polarity-lang.github.io/">
+    <div class="logo">
+        <img src="https://polarity-lang.github.io/logo_transparent.svg" alt="logo">
+        Polarity
+    </div>
+</a>
+
+<nav>
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/install/">Install</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/publications/">Publications</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/docs/">Docs</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/faq/">FAQ</a>
+    
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https://github.com/polarity-lang/polarity">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://polarity-lang.github.io/install/#installing-polarity">Installing Polarity</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/install/#requirements"><small>- Requirements</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/install/#building-from-source"><small>- Building from Source</small></a>
+                </div>
+                
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://polarity-lang.github.io/install/#editor-support">Editor Support</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/install/#visual-studio-code"><small>- Visual Studio Code</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/install/#vscodium"><small>- VSCodium</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/install/#building-from-source-1"><small>- Building from source</small></a>
+                </div>
+                
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://polarity-lang.github.io/install/#shell-completions">Shell Completions</a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text">Installation</div>
+<h1 id="installing-polarity">Installing Polarity</h1>
+<p>We currently do not provide prebuilt binaries, so you have to build the polarity executable from the sources yourself.</p>
+<h2 id="requirements">Requirements</h2>
+<p>The latest version of the source code is available on <a href="https://github.com/polarity-lang/polarity">github.com/polarity-lang/polarity</a>.
+You have to clone that repository into an empty directory, for example with the following invocation:</p>
+<pre data-lang="console" class="language-console z-code"><code class="language-console" data-lang="console"><span class="z-text z-plain">&gt; git clone git@github.com:polarity-lang/polarity.git
+</span></code></pre>
+<p>Polarity is implemented in <a href="https://www.rust-lang.org">Rust</a>, so you also need to install a Rust toolchain on your system.
+The recommended way to install Rust is to use the <a href="https://rustup.rs">rustup</a> toolchain manager and to follow the instructions on their website.</p>
+<h2 id="building-from-source">Building from Source</h2>
+<p>In order to build the binary you can use the provided <code>Makefile</code>:</p>
+<pre data-lang="console" class="language-console z-code"><code class="language-console" data-lang="console"><span class="z-text z-plain">&gt; make install
+</span></code></pre>
+<p>By default, this should install the executable <code>pol</code> in the directory <code>~/.cargo/bin/</code>.
+Make sure that this directory is in your <code>PATH</code>.
+You can check whether the installation was successful by trying to use the help option of the command line interface:</p>
+<pre data-lang="console" class="language-console z-code"><code class="language-console" data-lang="console"><span class="z-text z-plain">&gt; pol --help
+</span><span class="z-text z-plain">Usage: pol [OPTIONS] &lt;COMMAND&gt;
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">Commands:
+</span><span class="z-text z-plain">  run     Run a source code file
+</span><span class="z-text z-plain">  fmt     Format a code file
+</span><span class="z-text z-plain">  texify  Render a code file as a latex document
+</span><span class="z-text z-plain">  xfunc   De-/Refunctionalize a type in a code file
+</span><span class="z-text z-plain">  lsp     Start an LSP server
+</span><span class="z-text z-plain">  lift    Lift local (co)matches of a type to the top-level
+</span><span class="z-text z-plain">  help    Print this message or the help of the given subcommand(s)
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">Options:
+</span><span class="z-text z-plain">      --trace  Enable internal debug output
+</span><span class="z-text z-plain">  -h, --help   Print help
+</span></code></pre>
+<p>The <code>pol</code> binary is also used to provide editor support using the <a href="https://microsoft.github.io/language-server-protocol/">language server protocol (LSP)</a>, so make sure that the installation was successful before proceeding with the installation of the editor plugin.</p>
+<h1 id="editor-support">Editor Support</h1>
+<h2 id="visual-studio-code">Visual Studio Code</h2>
+<p>We offer a plugin for Visual Studio Code which provides rich editor services via the language server protocol (LSP).
+The plugin is available on the <a href="https://marketplace.visualstudio.com/items?itemName=polarity-lang.polarity">Visual Studio Marketplace</a> and can be found by searching for <code>polarity</code> in the extensions browser of Visual Studio Code.</p>
+<h2 id="vscodium">VSCodium</h2>
+<p>Users of <a href="https://vscodium.com/">VSCodium</a> or other editors compatible with <code>.vsix</code> plugins can install the extension from the <a href="https://open-vsx.org/extension/polarity-lang/polarity">open-vsx</a> marketplace instead.</p>
+<h2 id="building-from-source-1">Building from source</h2>
+<p>The plugin can also be built from source using the instructions on <a href="https://github.com/polarity-lang/vscode">github.com/polarity-lang/vscode</a>.</p>
+<h1 id="shell-completions">Shell Completions</h1>
+<p>In order to get working shell completions for the <code>pol</code> binary you need to generate a completion script for your shell and place it in the correct directory.
+This directory depends on your operating system, distribution and shell.
+Completions scripts can be generated with the <code>pol generate-completion</code> subcommand which supports Bash, Elvish, fish, PowerShell and the Zsh shell.</p>
+<p>If you are using the bash shell on Ubuntu, for example, you can install a completion script using the following steps:</p>
+<pre class="z-code"><code><span class="z-text z-plain">&gt; pol generate-completion bash pol
+</span><span class="z-text z-plain">&gt; sudo mv pol /usr/share/bash-completion/completions/pol
+</span></code></pre>
+<p>Please consult the documentation of your operating system or distribution to find out where you have to place the completion scripts on your computer.</p>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+<footer>
+  <small class="subtext">
+    Created by the <a href="https://github.com/polarity-lang/">polarity-lang</a> team.
+  </small>
+</footer>
+
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>
