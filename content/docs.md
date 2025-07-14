@@ -214,6 +214,38 @@ Marking toplevel let bindings as `transparent` should be done with caution, sinc
 A toplevel let binding named `main` which does not take arguments is treated specially.
 This binding is evaluated by `pol run` and printed to the console.
 
+## Local Let Bindings
+
+Local let bindings can be used to make expressions more readable or to factor out common subexpressions.
+In the following example we use a local let binding to bind the term `S(S(Z))` to the variable `two`.
+
+```
+let four: Nat {
+  let two := S(S(Z));
+  two.plus(two)
+}
+```
+Local let bindings can also be annotated with a type.
+The same example then looks as follows:
+
+```
+let four: Nat {
+  let two: Nat := S(S(Z));
+  two.plus(two)
+}
+```
+
+## Infix Declarations
+
+Infix operators can be declared and used for type constructors and constructors.
+Functions, for example, are much more readable when we can write `a -> b` instead of `Fun(a,b)`.
+
+```
+codata Fun(a b: Type) {
+    Fun(a, b).ap(implicit a b: Type, x: a): b,
+}
+infix _ -> _ := Fun(_,_)
+```
 
 ## Comments
 
