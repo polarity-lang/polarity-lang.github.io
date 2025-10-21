@@ -4,7 +4,18 @@ description = "Publications Related to Polarity"
 weight = 3
 +++
 
-The design of polarity has been described in the following publication:
+The design of Polarity has been described in the following publications:
+
+- **(2026) Filling the Gaps of Polarity** Bohdan Liesnikov, David Binder and Tim Süberkrüb. *To Appear at Programming '26*
+
+  The expression problem describes a fundamental tradeoff between two types of extensibility: extending a type with new *operations*, such as by pattern matching on an algebraic data type in functional programming, and extending a type with new *constructors*, such as by adding a new object implementing an interface in object-oriented programming.
+  Most dependently typed languages have good support for the former style through *inductive* types, but support for the latter style through *coinductive* types is usually much poorer.
+  Polarity is a language that treats both kinds of types symmetrically and allows the developer to switch between type representations.
+  However, it currently lacks several features expected of a state-of-the-art dependently typed language, such as implicit arguments.
+  The central aim of this paper is to provide an algorithmic type system and inference algorithm for implicit arguments that respect the core symmetry of the language.
+  Our work provides two key contributions: a complete algorithmic description of the type system backing Polarity, and a comprehensive description of a unification algorithm that covers arbitrary inductive and coinductive types.
+  We give rules for reduction semantics, conversion checking, and a unification algorithm for pattern-matching, which are essential for a usable implementation.
+  We expect that the comprehensive account of the unification algorithm and our design decisions can serve as a blueprint for other dependently typed languages that support inductive and coinductive types symmetrically.
 
 - **(2024) Deriving Dependently-Typed OOP from First Principles** David Binder, Ingo Skupin, Tim Süberkrüb and Klaus Ostermann. *OOPSLA '24* [Published Version](https://doi.org/10.1145/3649846), [Extended Version with Additional Appendices](https://arxiv.org/abs/2403.06707)
 
