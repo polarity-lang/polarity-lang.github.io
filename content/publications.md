@@ -6,7 +6,8 @@ weight = 3
 
 The design of polarity has been described in the following publication:
 
-- **(2026) Filling the Gaps of Polarity** Bohdan Liesnikov, David Binder and Tim Süberkrüb. *To Appear at Programming '26*
+- **(2026) Filling the Gaps of Polarity** Bohdan Liesnikov, David Binder and Tim Süberkrüb.
+  [Programming '26](https://doi.org/10.22152/programming-journal.org/2025/10/19)
 
   The expression problem describes a fundamental tradeoff between two types of extensibility: extending a type with new *operations*, such as by pattern matching on an algebraic data type in functional programming, and extending a type with new *constructors*, such as by adding a new object implementing an interface in object-oriented programming.
   Most dependently typed languages have good support for the former style through *inductive* types, but support for the latter style through *coinductive* types is usually much poorer.
