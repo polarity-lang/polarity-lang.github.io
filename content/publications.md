@@ -4,7 +4,7 @@ description = "Publications Related to Polarity"
 weight = 3
 +++
 
-The design of polarity has been described in the following publication:
+The design of polarity has been described in the following publications:
 
 - **(2026) Filling the Gaps of Polarity** Bohdan Liesnikov, David Binder and Tim Süberkrüb.
   [Programming '26](https://doi.org/10.22152/programming-journal.org/2025/10/19)
