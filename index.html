@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Polarity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #FED43F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        --primary-text-color-over: #000;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #ddd;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary-color: #382929;
+            --primary-text-color: #d7d7d7;
+            --primary-text-color-over: #FFF;
+            --primary-link-color: #9b9b9b;
+            --secondary-color: #282828;
+            --secondary-text-color: #f2f2f2;
+            --toc-highlight-text-color: #f2f2f2;
+            --toc-background-color: #3a3a3a;
+            --code-color: white;
+            --code-background-color: #4a4a4a;
+
+            --shadow-color: #202020;
+            --header-font-family: "Fira Sans", sans-serif;
+            --text-font-family: "Fira Sans", sans-serif;
+        }
+    }
+</style>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://polarity-lang.github.io/juice.css">
+    
+<link rel="stylesheet" href="/editor.css">
+<link rel="stylesheet" href="/landing.css">
+<!-- JavaScript to update iframe URL based on selected example -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Event listener for when an example is selected
+    document.getElementById('example-selector').addEventListener('change', function () {
+      let selectedExample = this.value;
+      let iframe = document.getElementById('editor-frame');
+      if (selectedExample) {
+        iframe.contentWindow.location.hash = selectedExample;
+      }
+    });
+    // Populate the selector with examples and add a default "Select an example ..." option
+    const select = document.getElementById('example-selector');
+    fetch('/examples/index.json')
+      .then(response => response.json())
+      .then(data => {
+        // Add the "Select an example ..." option
+        const defaultOption = document.createElement('option');
+        defaultOption.textContent = "Select an example...";
+        defaultOption.value = "";
+        defaultOption.disabled = true;
+        defaultOption.style.fontStyle = "italic";
+        select.appendChild(defaultOption);
+
+        // Add other example options
+        data.forEach(example => {
+          const option = document.createElement('option');
+          option.value = example.path;
+          option.textContent = example.name;
+          if (example.path === 'tutorial.pol') {
+            option.selected = true;
+          }
+          select.appendChild(option);
+        });
+      })
+      .catch(error => console.error('Error loading examples:', error));
+  });
+
+  window.onload = function() {
+    let iframe = document.getElementById('editor-frame');
+    iframe.style.visibility = 'visible';
+  };
+</script>
+
+</head>
+
+<body>
+    
+
+    <header class="pos-absolute" style="background-color: transparent">
+        
+
+<a href="https://polarity-lang.github.io/">
+    <div class="logo">
+        <img src="https://polarity-lang.github.io/logo_transparent.svg" alt="logo">
+        Polarity
+    </div>
+</a>
+
+<nav>
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/install/">Install</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/publications/">Publications</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/docs/">Docs</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/faq/">FAQ</a>
+    
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https://github.com/polarity-lang/polarity">Github</a>
+        
+    
+</nav>
+
+    </header>
+
+    <div class="hero">
+        
+<section class="text-center welcome">
+  <h1 class="heading-text">Polarity</h1>
+  <h3 class="title-text">
+    A research language focused on dependent data and codata types
+  </h3>
+  <p>
+  <div class="buttons-row-container">
+    <div class="buttons-row">
+      <a class="github-button" href="https://github.com/polarity-lang/polarity" target="_blank"><img width="40"
+          src="https://polarity-lang.github.io/github_icon.svg" />GitHub
+        <a class="discord-button" href="https://discord.gg/NWjGr9qNhR" target="_blank"><img width="40"
+            src="https://polarity-lang.github.io/discord_icon.svg" />Discord</a>
+    </div>
+  </div>
+  </p>
+</section>
+<img class="hero-image" style="width: 25%" src="https://polarity-lang.github.io/logo_transparent.svg">
+
+    </div>
+
+    
+
+    <main>
+        
+        
+        
+        
+
+        <div class="content text">
+            
+
+<section>
+  <h1>Try Polarity</h1>
+  <div class="select-container">
+    <select id="example-selector"></select>
+  </div>
+</section>
+
+<section class="polarity-demo">
+  <div class="demo-container">
+    <div class="editor-container">
+      <iframe style="visibility: hidden;" class="editor-frame" id="editor-frame" src="https://polarity-lang.github.io/editor#tutorial.pol"></iframe>
+    </div>
+  </div>
+</section>
+
+
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+<footer>
+  <small class="subtext">
+    Created by the <a href="https://github.com/polarity-lang/">polarity-lang</a> team.
+  </small>
+</footer>
+
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Publications | Polarity </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #FED43F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        --primary-text-color-over: #000;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #ddd;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary-color: #382929;
+            --primary-text-color: #d7d7d7;
+            --primary-text-color-over: #FFF;
+            --primary-link-color: #9b9b9b;
+            --secondary-color: #282828;
+            --secondary-text-color: #f2f2f2;
+            --toc-highlight-text-color: #f2f2f2;
+            --toc-background-color: #3a3a3a;
+            --code-color: white;
+            --code-background-color: #4a4a4a;
+
+            --shadow-color: #202020;
+            --header-font-family: "Fira Sans", sans-serif;
+            --text-font-family: "Fira Sans", sans-serif;
+        }
+    }
+</style>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://polarity-lang.github.io/juice.css">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https://polarity-lang.github.io/">
+    <div class="logo">
+        <img src="https://polarity-lang.github.io/logo_transparent.svg" alt="logo">
+        Polarity
+    </div>
+</a>
+
+<nav>
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/install/">Install</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/publications/">Publications</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/docs/">Docs</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/faq/">FAQ</a>
+    
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https://github.com/polarity-lang/polarity">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+        
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text">Publications Related to Polarity</div>
+<p>The design of polarity has been described in the following publications:</p>
+<ul>
+<li>
+<p><strong>(2026) Filling the Gaps of Polarity</strong> Bohdan Liesnikov, David Binder and Tim Süberkrüb.
+<a href="https://doi.org/10.22152/programming-journal.org/2025/10/19">Programming '26</a></p>
+<p>The expression problem describes a fundamental tradeoff between two types of extensibility: extending a type with new <em>operations</em>, such as by pattern matching on an algebraic data type in functional programming, and extending a type with new <em>constructors</em>, such as by adding a new object implementing an interface in object-oriented programming.
+Most dependently typed languages have good support for the former style through <em>inductive</em> types, but support for the latter style through <em>coinductive</em> types is usually much poorer.
+Polarity is a language that treats both kinds of types symmetrically and allows the developer to switch between type representations.
+However, it currently lacks several features expected of a state-of-the-art dependently typed language, such as implicit arguments.
+The central aim of this paper is to provide an algorithmic type system and inference algorithm for implicit arguments that respect the core symmetry of the language.
+Our work provides two key contributions: a complete algorithmic description of the type system backing Polarity, and a comprehensive description of a unification algorithm that covers arbitrary inductive and coinductive types.
+We give rules for reduction semantics, conversion checking, and a unification algorithm for pattern-matching, which are essential for a usable implementation.
+We expect that the comprehensive account of the unification algorithm and our design decisions can serve as a blueprint for other dependently typed languages that support inductive and coinductive types symmetrically.</p>
+</li>
+<li>
+<p><strong>(2024) Deriving Dependently-Typed OOP from First Principles</strong> David Binder, Ingo Skupin, Tim Süberkrüb and Klaus Ostermann. <em>OOPSLA '24</em> <a href="https://doi.org/10.1145/3649846">Published Version</a>, <a href="https://arxiv.org/abs/2403.06707">Extended Version with Additional Appendices</a></p>
+<p>The expression problem describes how most types can easily be extended with new ways to produce the type or new ways to consume the type, but not both. When abstract syntax trees are defined as an algebraic data type, for example, they can easily be extended with new consumers, such as print or eval, but adding a new constructor requires the modification of all existing pattern matches. The expression problem is one way to elucidate the difference between functional or data-oriented programs (easily extendable by new consumers) and object-oriented programs (easily extendable by new producers). This difference between programs which are extensible by new producers or new consumers also exists for dependently typed programming, but with one core difference: Dependently-typed programming almost exclusively follows the functional programming model and not the object-oriented model, which leaves an interesting space in the programming language landscape unexplored. In this paper, we explore the field of dependently-typed object-oriented programming by deriving it from first principles using the principle of duality. That is, we do not extend an existing object-oriented formalism with dependent types in an ad-hoc fashion, but instead start from a familiar data-oriented language and derive its dual fragment by the systematic use of defunctionalization and refunctionalization. Our central contribution is a dependently typed calculus which contains two dual language fragments. We provide type- and semantics-preserving transformations between these two language fragments: defunctionalization and refunctionalization. We have implemented this language and these transformations and use this implementation to explain the various ways in which constructions in dependently typed programming can be explained as special instances of the general phenomenon of duality.</p>
+</li>
+</ul>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+<footer>
+  <small class="subtext">
+    Created by the <a href="https://github.com/polarity-lang/">polarity-lang</a> team.
+  </small>
+</footer>
+
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>
