@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Docs | Polarity </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <style>
+    :root {
+        /* Primary theme color */
+        --primary-color: #FED43F;
+        /* Primary theme text color */
+        --primary-text-color: #543631;
+        --primary-text-color-over: #000;
+        /* Primary theme link color */
+        --primary-link-color: #F9BB2D;
+        /* Secondary color: the background body color */
+        --secondary-color: #fcfaf6;
+        --secondary-text-color: #303030;
+        /* Highlight text color of table of content */
+        --toc-highlight-text-color: #d46e13;
+        --toc-background-color: white;
+        --code-color: #4a4a4a;
+        --code-background-color: white;
+
+        --shadow-color: #ddd;
+
+        /* Font used for headers (h1 & h2) */
+        --header-font-family: "Fira Sans", sans-serif;
+        /* Font used for text */
+        --text-font-family: "Fira Sans", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --primary-color: #382929;
+            --primary-text-color: #d7d7d7;
+            --primary-text-color-over: #FFF;
+            --primary-link-color: #9b9b9b;
+            --secondary-color: #282828;
+            --secondary-text-color: #f2f2f2;
+            --toc-highlight-text-color: #f2f2f2;
+            --toc-background-color: #3a3a3a;
+            --code-color: white;
+            --code-background-color: #4a4a4a;
+
+            --shadow-color: #202020;
+            --header-font-family: "Fira Sans", sans-serif;
+            --text-font-family: "Fira Sans", sans-serif;
+        }
+    }
+</style>
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="https://polarity-lang.github.io/juice.css">
+    
+    
+</head>
+
+<body>
+    
+<header class="box-shadow">
+    
+
+<a href="https://polarity-lang.github.io/">
+    <div class="logo">
+        <img src="https://polarity-lang.github.io/logo_transparent.svg" alt="logo">
+        Polarity
+    </div>
+</a>
+
+<nav>
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/install/">Install</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/publications/">Publications</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/docs/">Docs</a>
+    
+    
+    
+    
+    <a class="nav-item subtitle-text" href="https://polarity-lang.github.io/faq/">FAQ</a>
+    
+    
+    
+        
+        <a class="nav-item subtitle-text" href="https://github.com/polarity-lang/polarity">Github</a>
+        
+    
+</nav>
+
+</header>
+
+
+    <main>
+        
+        
+        
+        
+        
+        <div class="toc">
+            <div class="toc-sticky">
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#language-reference">Language Reference</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#data-types"><small>- Data Types</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#codata-types"><small>- Codata Types</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#definitions"><small>- Definitions</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#codefinitions"><small>- Codefinitions</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#toplevel-let-bindings"><small>- Toplevel Let Bindings</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#local-let-bindings"><small>- Local Let Bindings</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#infix-declarations"><small>- Infix Declarations</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#comments"><small>- Comments</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#notes"><small>- Notes</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#typed-holes"><small>- Typed Holes</small></a>
+                </div>
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#attributes"><small>- Attributes</small></a>
+                </div>
+                
+                
+                
+                <div class="toc-item">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#cli-reference">CLI Reference</a>
+                </div>
+                
+                
+                <div class="toc-item-child">
+                    <a class="subtext" href="https://polarity-lang.github.io/docs/#subcommand-texify"><small>- Subcommand texify</small></a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        
+
+        <div class="content text">
+            
+<div class="heading-text">Docs</div>
+<p>This page contains the reference documentation of the language features and information about how to use the command line interface.</p>
+<h1 id="language-reference">Language Reference</h1>
+<h2 id="data-types">Data Types</h2>
+<p>The simplest form of data types do not have parameters or indices. In that case, the constructors of the data type can be given as a comma-separated list. As with all syntactic constructs, we always allow trailing commas.</p>
+<pre class="z-code"><code><span class="z-text z-plain">data Bool { True, False, }
+</span></code></pre>
+<p>In the more general case we have to specify the precise type that a constructor constructs. Therefore, the above data type declaration can be written more explicitly as:</p>
+<pre class="z-code"><code><span class="z-text z-plain">data Bool { True: Bool, False: Bool }
+</span></code></pre>
+<p>A simple example of a parameterized type is the type of singly-linked lists of some type a. In that case, we have to specify both the parameters of the type constructor List, and the instantiations of the term constructors Nil and Cons. For the parameter of the type constructor List we make use of the impredicative type universe, which is written Type.</p>
+<pre class="z-code"><code><span class="z-text z-plain">data List(a: Type) {
+</span><span class="z-text z-plain">  Nil(a: Type): List(a),
+</span><span class="z-text z-plain">  Cons(a: Type, x: a, xs: List(a)): List(a)
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>A proper dependent type is the type of length-indexed lists: the vector type. The VNil and VCons constructors of vectors create vectors with different indices.</p>
+<pre class="z-code"><code><span class="z-text z-plain">data Nat { Z, S(n: Nat) }
+</span><span class="z-text z-plain">data Vec(a: Type, n: Nat) {
+</span><span class="z-text z-plain">  VNil(a: Type): Vec(a, Z),
+</span><span class="z-text z-plain">  VCons(a: Type, n: Nat, x: a, xs: Vec(a, n)): Vec(a, S(n))
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Finally, we can define the Martin-Löf equality type as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">data Eq (a: Type, x y: a) {
+</span><span class="z-text z-plain">    Refl(a: Type, x: a) : Eq(a, x, x)
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<h2 id="codata-types">Codata Types</h2>
+<p>Codata types are specified by a list of methods or destructors. A very simple example is the type of pairs of a boolean and a natural number:</p>
+<pre class="z-code"><code><span class="z-text z-plain">data Bool { True, False }
+</span><span class="z-text z-plain">data Nat { Z, S(n: Nat)}
+</span><span class="z-text z-plain">codata Pair {
+</span><span class="z-text z-plain">  .proj1: Bool,
+</span><span class="z-text z-plain">  .proj2: Nat
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>This type supports two observations; the first observation proj1 yields a boolean value when invoked on a Pair, and the observation proj2 yields a natural number.</p>
+<p>A common codata type that is typically built into many programming languages is the function type. In our language, it is not built-in, but we can define it as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">codata Fun(a b: Type) {
+</span><span class="z-text z-plain">    Fun(a, b).ap(a: Type, b: Type, x: a) : b
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Codata types can also model infinite types. The type of infinite streams is a classical example and written like this:</p>
+<pre class="z-code"><code><span class="z-text z-plain">codata Stream(a: Type) {
+</span><span class="z-text z-plain">  Stream(a).head(a: Type) : a,
+</span><span class="z-text z-plain">  Stream(a).tail(a: Type) : Stream(a),
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Sometimes we also need to reference the object on which a method is invoked in its return type. This is especially the case when we want an observation to yield a proof that the object satisfies some property. Here is a simple example which shows how this can be expressed:</p>
+<pre class="z-code"><code><span class="z-text z-plain">codata Bool {
+</span><span class="z-text z-plain">  Bool.neg : Bool,
+</span><span class="z-text z-plain">  (x: Bool).neg_inverse : Eq(Bool, x, x.neg.neg),
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<h2 id="definitions">Definitions</h2>
+<p>Definitions create a consumer (method) for a data type. These consumers receive an implicit input on which they pattern match. As a simple example, we can define Boolean negation as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">def Bool.neg: Bool {
+</span><span class="z-text z-plain">    True =&gt; False,
+</span><span class="z-text z-plain">    False =&gt; True,
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Definitions can be recursive. For instance, we can define addition on natural numbers as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">def Nat.add(y: Nat) : Nat {
+</span><span class="z-text z-plain">    Z =&gt; y,
+</span><span class="z-text z-plain">    S(x) =&gt; S(x.add(y)),
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Definitions can also deal with parametrized types. For instance, we can define a map method for the data type List as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">def List(a).map(a b: Type, f: Fun(a, b)): List(b) {
+</span><span class="z-text z-plain">    Nil(a) =&gt; Nil(b),
+</span><span class="z-text z-plain">    Cons(a, x, xs) =&gt; Cons(b, f.ap(a, b, x), xs.map(a, b, f)),
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Finally, to illustrate dependently typed definitions, let us give the classic example of defining append on length-indexed lists:</p>
+<pre class="z-code"><code><span class="z-text z-plain">def Vec(a, n).append(a: Type, n m: Nat, ys: Vec(a, m)) : Vec(a, n.add(m)) {
+</span><span class="z-text z-plain">    VNil(a) =&gt; ys,
+</span><span class="z-text z-plain">    VCons(a, n&#39;, x, xs) =&gt; VCons(a, n&#39;.add(m), x, xs.append(a, n&#39;, m, ys))
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Last, but certainly not least, the return type of a definition may not only depend on its parameters but also on its (implicit) input. To do so, we can make the input explicit by assigning it a name. For instance, we can prove that Boolean negation is its own inverse as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">def (x: Bool).neg_inverse: Eq(Bool, x, x.not.not) {
+</span><span class="z-text z-plain">    True =&gt; Refl(Bool, True),
+</span><span class="z-text z-plain">    False =&gt; Refl(Bool, False)
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<h2 id="codefinitions">Codefinitions</h2>
+<p>Codefinitions create producers (or objects) for codata types. They need to define the behavior of the object when each of its destructors is invoked. Analogously to pattern matching, where we pattern match on the constructors of a data type, we copattern match on the destructors of a codata type. For example, we can create a pair with the Pair codata type defined above as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">codef MyPair: Pair {
+</span><span class="z-text z-plain">    .proj1 =&gt; True,
+</span><span class="z-text z-plain">    .proj2 =&gt; 42,
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>We can retrieve the values in the pair by invoking one of the destructors. For instance, MyPair.proj2 will yield the result of 42.</p>
+<p>Codefinitions can also be used to construct infinite objects. For instance, we can generate an infinite stream that counts upwards as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">codef CountUp(n: Nat): Stream(Nat) {
+</span><span class="z-text z-plain">    .head(_) =&gt; n,
+</span><span class="z-text z-plain">    .tail(_) =&gt; CountUp(S(n)),
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Finally, codefinitions can also return proofs that they fulfill certain properties:</p>
+<pre class="z-code"><code><span class="z-text z-plain">codef True: Bool {
+</span><span class="z-text z-plain">    .not =&gt; False,
+</span><span class="z-text z-plain">    .neg_inverse =&gt; Refl(Bool, True),
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<pre class="z-code"><code><span class="z-text z-plain">codef False: Bool {
+</span><span class="z-text z-plain">    .not =&gt; True,
+</span><span class="z-text z-plain">    .neg_inverse =&gt; Refl(Bool, False),
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<h2 id="toplevel-let-bindings">Toplevel Let Bindings</h2>
+<p>Expressions can be defined at the toplevel using let bindings.
+In the following example we bind the expression <code>S(S(S(S(Z))))</code> to the name <code>four</code>:</p>
+<pre class="z-code"><code><span class="z-text z-plain">data Nat { Z, S(n: Nat) }
+</span><span class="z-text z-plain">let four : Nat { S(S(S(S(Z)))) }
+</span></code></pre>
+<p>These top level bindings are <code>opaque</code> by default.
+This means that they are not unfolded during type-checking and not judgementally equal to their body.
+This behaviour can be controlled using the <code>opaque</code> and <code>transparent</code> attributes.</p>
+<pre class="z-code"><code><span class="z-text z-plain">data Nat { Z, S(n: Nat) }
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">data Eq(a: Type, x y: a) {
+</span><span class="z-text z-plain">    Refl(a: Type, x: a): Eq(a, x, x)
+</span><span class="z-text z-plain">}
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">#[transparent]
+</span><span class="z-text z-plain">let transparentTwo: Nat {S(S(Z))}
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">/// This proof typechecks
+</span><span class="z-text z-plain">let p1: Eq(Nat, S(S(Z)), transparentTwo) {Refl(Nat, S(S(Z)))}
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">#[opaque]
+</span><span class="z-text z-plain">let opaqueTwo: Nat {S(S(Z))}
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">/// This proof does not typecheck
+</span><span class="z-text z-plain">let p2: Eq(Nat, S(S(Z)), opaqueTwo) {Refl(Nat, S(S(Z)))}
+</span></code></pre>
+<p>Marking toplevel let bindings as <code>transparent</code> should be done with caution, since recursive let bindings can lead to non-termination during normalization and type-checking.</p>
+<h4 id="the-main-expression">The Main Expression</h4>
+<p>A toplevel let binding named <code>main</code> which does not take arguments is treated specially.
+This binding is evaluated by <code>pol run</code> and printed to the console.</p>
+<h2 id="local-let-bindings">Local Let Bindings</h2>
+<p>Local let bindings can be used to make expressions more readable or to factor out common subexpressions.
+In the following example we use a local let binding to bind the term <code>S(S(Z))</code> to the variable <code>two</code>.</p>
+<pre class="z-code"><code><span class="z-text z-plain">let four: Nat {
+</span><span class="z-text z-plain">  let two := S(S(Z));
+</span><span class="z-text z-plain">  two.plus(two)
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>Local let bindings can also be annotated with a type.
+The same example then looks as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">let four: Nat {
+</span><span class="z-text z-plain">  let two: Nat := S(S(Z));
+</span><span class="z-text z-plain">  two.plus(two)
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<h2 id="infix-declarations">Infix Declarations</h2>
+<p>Infix operators can be declared and used for type constructors and constructors.
+Functions, for example, are much more readable when we can write <code>a -&gt; b</code> instead of <code>Fun(a,b)</code>.</p>
+<pre class="z-code"><code><span class="z-text z-plain">codata Fun(a b: Type) {
+</span><span class="z-text z-plain">    Fun(a, b).ap(implicit a b: Type, x: a): b,
+</span><span class="z-text z-plain">}
+</span><span class="z-text z-plain">infix _ -&gt; _ := Fun(_,_)
+</span></code></pre>
+<h2 id="comments">Comments</h2>
+<p>Line comments are written using two forward slashes: <code>// This is a comment</code>. Certain items of the program can also be annotated with a documentation comment. Here is an example using doc-comments:</p>
+<pre class="z-code"><code><span class="z-text z-plain">/// The type of booleans
+</span><span class="z-text z-plain">data Bool {
+</span><span class="z-text z-plain">  /// The boolean truth value
+</span><span class="z-text z-plain">  True,
+</span><span class="z-text z-plain">  /// The boolean false value
+</span><span class="z-text z-plain">  False,
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<p>These documentation comments are preserved during defunctionalization and refunctionalization.</p>
+<h2 id="notes">Notes</h2>
+<p>Some parts of the documentation of a module describe high-level design choices or principles and do not correspond to a single declaration.
+For this use case we support <em>notes</em>: toplevel declarations with a name to which we can attach textual documentation.</p>
+<pre class="z-code"><code><span class="z-text z-plain">/// ... documentation goes here ...
+</span><span class="z-text z-plain">note invariant
+</span></code></pre>
+<p>Notes are preserved during program transformations and are part of the browsable documentation generated by the <code>pol doc</code> subcommand.</p>
+<h2 id="typed-holes">Typed Holes</h2>
+<p>An incomplete program can be written using typed holes. Typed holes are written using either ?; they have type ? which unifies with any other type. For example, an incomplete implementation of boolean negation can be written as follows:</p>
+<pre class="z-code"><code><span class="z-text z-plain">def Bool.neg : Bool {
+</span><span class="z-text z-plain">  True =&gt; ?,
+</span><span class="z-text z-plain">  False =&gt; ?,
+</span><span class="z-text z-plain">}
+</span></code></pre>
+<h2 id="attributes">Attributes</h2>
+<p>An attribute is a freeform metadatum that can be added to various pieces of syntax.
+These attributes can then be interpreted by the compiler or other tools.
+Attributes are written in a similar style as Rust and C#: We use <code>#[attr1,attr2]</code> in front of an entity that we want to annotate.</p>
+<pre class="z-code"><code><span class="z-text z-plain">#[omit_print]
+</span><span class="z-text z-plain">data Bool { True, False }
+</span></code></pre>
+<p>The following attributes are currently supported by the compiler:</p>
+<ul>
+<li><code>omit_print</code> Toplevel declarations annotated with this attribute are ignored by the prettyprinter.
+This is useful for codesnippets that are compiled to tex in order to be included in documents.</li>
+<li><code>opaque</code> and <code>transparent</code> These attributes can be used on <a href="https://polarity-lang.github.io/docs/#toplevel-let-bindings">toplevel let bindings</a> to control whether the binding should be inlined during normalization.</li>
+</ul>
+<h1 id="cli-reference">CLI Reference</h1>
+<p>In order to learn more about available options you can use <code>pol --help</code> on the command line.
+This section contains more information about specific subcommands.</p>
+<h2 id="subcommand-texify">Subcommand texify</h2>
+<p>If you want to include a color-highlighted polarity snippet in a tex file then you can use the <code>pol texify</code> subcommand which generates typeset latex.
+The generated tex code will depend on some custom color definitions.
+We suggest that you include the following definitions in the preamble as a starting point.</p>
+<pre class="z-code"><code><span class="z-text z-plain">\usepackage{alltt}
+</span><span class="z-text z-plain">\usepackage{xcolor}
+</span><span class="z-text z-plain">% Color definitions
+</span><span class="z-text z-plain">\definecolor{polRed}{rgb}{0.8,0.4,0.3}
+</span><span class="z-text z-plain">\definecolor{polBlue}{rgb}{0.06, 0.2, 0.65}
+</span><span class="z-text z-plain">\definecolor{polGreen}{RGB}{0,155,85}
+</span><span class="z-text z-plain">\definecolor{polMagenta}{rgb}{0.8, 0.13, 0.13}
+</span><span class="z-text z-plain">\definecolor{polCyan}{rgb}{0.0, 1.0, 1.0}
+</span><span class="z-text z-plain">
+</span><span class="z-text z-plain">\newcommand*{\setTT}[1]{\texttt{#1}}
+</span><span class="z-text z-plain">\newcommand{\polType}[1]{\textcolor{polRed}{\setTT{#1}}}
+</span><span class="z-text z-plain">\newcommand{\polCtor}[1]{\textcolor{polBlue}{\setTT{#1}}}
+</span><span class="z-text z-plain">\newcommand{\polDtor}[1]{\textcolor{polGreen}{\setTT{#1}}}
+</span><span class="z-text z-plain">\newcommand{\polKw}[1]{\textcolor{polMagenta}{\setTT{#1}}}
+</span><span class="z-text z-plain">\newcommand{\polComment}[1]{\textcolor{polCyan}{\setTT{#1}}}
+</span></code></pre>
+
+
+        </div>
+
+        
+        
+    </main>
+
+    
+<footer>
+  <small class="subtext">
+    Created by the <a href="https://github.com/polarity-lang/">polarity-lang</a> team.
+  </small>
+</footer>
+
+</body>
+<script>
+    const scrollHandler = entries => {
+        // Find the first entry which intersecting and ratio > 0.9 to highlight.
+        let entry = entries.find(entry => {
+            return entry.isIntersecting && entry.intersectionRatio > 0.9;
+        });
+        if (!entry) return;
+
+        document.querySelectorAll(".toc a").forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        // let url = new URL(`#${entry.target.id}`);
+        let link = document.querySelector(`.toc a[href$="${decodeURIComponent(`#${entry.target.id}`)}"]`)
+        if (link) {
+            link.classList.add("active");
+            link.scrollIntoView({ behavior: "auto", block: "nearest" });
+        }
+    };
+    // Set -100px root margin to improve highlight experience.
+    const observer = new IntersectionObserver(scrollHandler, { threshold: 1 });
+    let items = document.querySelectorAll('h1,h2,h3,h4,h5,h6');
+    items.forEach(item => observer.observe(item));
+</script>
+
+</html>
