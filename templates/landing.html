@@ -1,5 +1,7 @@
 {% extends "juice/templates/index.html" %}
 {% block head %}
+{{ super() }}
+<link rel="stylesheet" href="/syntax-overrides.css">
 <link rel="stylesheet" href="/editor.css">
 <link rel="stylesheet" href="/landing.css">
 <!-- JavaScript to update iframe URL based on selected example -->

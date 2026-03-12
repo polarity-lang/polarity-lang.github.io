@@ -1,0 +1,10 @@
+/* These overrides are necessary to fix visual issues with syntax highlighting on newer zola versions */
+
+.content pre.giallo {
+    background-color: var(--code-background-color) !important;
+}
+
+.content pre.giallo code,
+.content pre.giallo span {
+    background-color: transparent !important;
+}
