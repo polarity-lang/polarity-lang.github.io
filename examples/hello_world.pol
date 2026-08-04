@@ -1,0 +1,8 @@
+use "../std/prim/string.pol"
+use "../std/data/unit.pol"
+use "../std/io/io.pol"
+use "../std/io/print.pol"
+
+let main: IO(Unit) {
+    println("Hello, World!")
+}

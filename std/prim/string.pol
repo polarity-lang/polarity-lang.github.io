@@ -1,0 +1,12 @@
+use "./char.pol"
+
+/// An opaque Unicode string.
+extern String: Type
+
+/// Concatenation of two strings.
+extern concat_string(x y: String): String
+
+infix _ ++ _ := concat_string(_, _)
+
+/// Appending a single unicode character to a string.
+extern append_char(c: Char, s: String): String
